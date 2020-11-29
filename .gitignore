@@ -1,1 +1,7 @@
-Fichas/
+Fichas/**
+Aulas/Csharp/bin/**
+Aulas/Csharp/.vscode/**
+Aulas/Csharp/.vscode/settings
+Aulas/Csharp/.vscode/tasks.json
+Aulas/Csharp/obj/**
+**/.idea/*

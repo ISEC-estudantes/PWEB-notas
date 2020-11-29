@@ -1,0 +1,22 @@
+@model Disciplinas
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Detalhes sobre a Disciplina @Model.Nome"</title>
+</head>
+<body>
+<div>
+   <b>id:</b>   @Model.id<br/>
+   <b>Curso:</b>   @Model.Curso<br/>
+   <b>Nome:</b>   @Model.Nome<br/>
+   <b>Semestre:</b>   @Model.Semestre<br/>
+   <b>ECTS:</b>   @Model.ECTS<br/>
+</div>
+</body>
+</html>

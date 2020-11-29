@@ -1,0 +1,37 @@
+@* @model System.Collections.Generic.List<Ex1.Models.Disciplinas> *@
+@model IEnumerable<F3Ex1.Models.Disciplinas>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Lista de UCS</title>
+</head>
+<body>
+<div>
+    <table>
+        <tr>
+            <th>Curso</th>
+            <th>Nome da Disciplina</th>
+            <th>ETCS</th>
+            <th>Semestre</th>
+            <th>opções</th>
+        </tr>
+        
+        @foreach (var uc in Model)
+        {
+            <tr>
+                <th>@uc.Curso</th>
+                <th>@uc.Nome</th>
+                <th>@uc.ECTS</th>
+                <th>@uc.Semestre</th>
+                <th>@Html.ActionLink("Ver", "Detalhes", "UCs", new {uc.id}, null)</th>
+            </tr>    
+        }
+    </table>
+</div>
+</body>
+</html>
