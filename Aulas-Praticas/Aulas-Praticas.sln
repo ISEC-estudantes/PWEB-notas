@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csharp", "Csharp\Csharp.csproj", "{89D82350-725C-4788-8A6F-1FB3D8F271EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC", "MVC\MVC.csproj", "{6B52EB18-DF7E-4664-8ABB-256A1352D5AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ficha3", "Ficha3", "{C6955D97-758E-4122-91AE-A9D7C8B17DBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F3Ex1", "F3Ex1\F3Ex1.csproj", "{AAD90196-799B-431F-97DA-ABBE7795B547}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89D82350-725C-4788-8A6F-1FB3D8F271EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89D82350-725C-4788-8A6F-1FB3D8F271EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89D82350-725C-4788-8A6F-1FB3D8F271EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89D82350-725C-4788-8A6F-1FB3D8F271EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B52EB18-DF7E-4664-8ABB-256A1352D5AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B52EB18-DF7E-4664-8ABB-256A1352D5AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B52EB18-DF7E-4664-8ABB-256A1352D5AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B52EB18-DF7E-4664-8ABB-256A1352D5AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAD90196-799B-431F-97DA-ABBE7795B547}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAD90196-799B-431F-97DA-ABBE7795B547}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAD90196-799B-431F-97DA-ABBE7795B547}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAD90196-799B-431F-97DA-ABBE7795B547}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AAD90196-799B-431F-97DA-ABBE7795B547} = {C6955D97-758E-4122-91AE-A9D7C8B17DBB}
+	EndGlobalSection
+EndGlobal

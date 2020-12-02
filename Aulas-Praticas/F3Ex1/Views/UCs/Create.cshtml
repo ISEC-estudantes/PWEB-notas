@@ -1,0 +1,59 @@
+@using Microsoft.AspNetCore.Components.Forms
+@model Disciplinas
+
+@{
+    ViewBag.Title = "Criar disciplina";
+    Layout = "_Layout";
+    ViewDataDictionary.FormatValue(Model, "Disciplinas");
+    
+}
+
+<h2>Criar disciplina</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <h4>Disciplina</h4>
+        <hr/>
+        @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+        @* Nome *@
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nome, htmlAttributes: new {@clss = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nome, "", new {@class = "text-danger"})
+            </div>
+        </div>
+
+        @* Curso *@
+        <div class="form-group">
+            @Html.LabelFor(model => model.Curso, htmlAttributes: new {@clss = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Curso, "", new {@class = "text-danger"})
+            </div>
+            @* Semestre *@
+        </div>
+        
+        @* Semestre *@
+        <div class="form-group">
+            @Html.LabelFor(model => model.Semestre, htmlAttributes: new {@clss = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Semestre, "", new {@class = "number-danger"})
+            </div>
+        </div>
+        
+        @* ECTS *@
+        <div class="form-group">
+            @Html.LabelFor(model => model.ECTS, htmlAttributes: new {@clss = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ECTS, "", new {@class = "number-danger"})
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Criar" class="btn btn-default"/>
+            </div>
+        </div>
+    </div>
+}

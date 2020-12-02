@@ -1,26 +1,26 @@
 @* @model System.Collections.Generic.List<Ex1.Models.Disciplinas> *@
-@model IEnumerable<F3Ex1.Models.Disciplinas>
+@model List<Disciplinas>
+
 @{
-    Layout = null;
+    ViewBag.Title = "Lista de UCs";
+    Layout = "_Layout";
 }
 
-<!DOCTYPE html>
+<h2>Lista de UCs</h2>
 
-<html>
-<head>
-    <title>Lista de UCS</title>
-</head>
-<body>
-<div>
+@Html.ActionLink("Criar Nova UC", "Create", "UCs", new Disciplinas() )
+
+@if (Model.Any())
+{
     <table>
         <tr>
             <th>Curso</th>
             <th>Nome da Disciplina</th>
             <th>ETCS</th>
             <th>Semestre</th>
-            <th>opções</th>
+            <th>Opções</th>
         </tr>
-        
+
         @foreach (var uc in Model)
         {
             <tr>
@@ -28,10 +28,16 @@
                 <th>@uc.Nome</th>
                 <th>@uc.ECTS</th>
                 <th>@uc.Semestre</th>
-                <th>@Html.ActionLink("Ver", "Detalhes", "UCs", new {uc.id}, null)</th>
-            </tr>    
+                <th>@Html.ActionLink("Detalhes", "Detalhes", "UCs", new {uc.id}, null) | \
+                    @Html.ActionLink("Remover", "Apagar", "UCs", new {uc.id}, null) | \
+                    @Html.ActionLink("Modificar", "Edit", "UCs", new {uc.id}, null) </th>
+            </tr>
         }
     </table>
-</div>
-</body>
-</html>
+}
+else
+{
+    <div>
+        <p>Não existem Unidades Corriculares, por favor adicione uma.</p>
+    </div>
+}

@@ -9,4 +9,8 @@
       <Content Remove="Views\Home\cona.cshtml" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Pages" />
+    </ItemGroup>
+
 </Project>
