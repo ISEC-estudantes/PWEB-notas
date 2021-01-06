@@ -1,0 +1,109 @@
+﻿@model IEnumerable<MicrosoftIdentity.Models.Produto>
+@using MicrosoftIdentity.Models
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Produtos</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="row">
+    <div class="col-lg-6">
+        <h4>Cátalogo de produtos</h4>
+        <table class="table table-striped">
+            <tr>
+                <th>
+                </th>
+                <th></th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Preco)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            @Html.ActionLink("Editar", "Edit", new { id = item.IDProduto });                            
+                        }
+                    </td>
+                    <td>
+                        <img src="/uploads/@item.imagem" class="img-thumbnail"  width="100" height="50" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Preco)
+                    </td>
+                    <td class="form-inline">
+                        @using (Html.BeginForm())
+                        {
+                            <input type="hidden" value="@item.IDProduto" name="idProduto" />
+                            <span>Quantidade: </span>
+                            <input name="quantidade" class="form-inline" style="width:50px;" />
+                            <input type="submit" value="comprar" class="btn btn-info btn-sm" />
+                        }
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    <div class="col-lg-1"></div>
+    <div class="col-lg-5 bg-info">
+        <h4>Carrinho de compras</h4>
+        @{
+            if (Session["idCompra"] != null)
+            {
+                <p>Existe uma compra em curso</p>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Preço Unitário</th>
+                            <th>Quantidade</th>
+                            <th>Total</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{double total = 0; }
+                        @foreach (CompraProduto x in ViewBag.ListaProdutosNaCompra)
+                        {
+                            <tr>
+                                <td>@x.Produto.Nome</td>
+                                <td>@x.Produto.Preco €</td>
+                                <td>@x.Quantidade</td>
+                                <td>@(x.Produto.Preco * x.Quantidade) €</td>
+                                <td>@Html.ActionLink("x", "RemoveFromCompra", "Produtoes", new { id = x.IDCompraProduto })</td>
+                            </tr>
+                            {
+                                total = total + (x.Produto.Preco * x.Quantidade);
+                            }
+                        }
+                    </tbody>
+                </table>
+                <strong>Total: @total € </strong>
+            }
+            else
+            {
+                <p>Não Existe uma compra em curso</p>
+            }
+
+
+
+
+        }
+
+    </div>
+
+</div>
